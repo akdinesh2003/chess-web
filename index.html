@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess - Ultimate Chess Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-classic">
+    <div class="particles" id="particles"></div>
+    
+    <div class="header">
+        <h1>♔ CHESS ♛</h1>
+        <p>Experience the ultimate chess battlefield with stunning effects</p>
+    </div>
+
+    <div class="game-container">
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>🎨 Themes</h3>
+                <div class="theme-selector">
+                    <button class="theme-btn classic" onclick="changeTheme('classic')" title="Classic"></button>
+                    <button class="theme-btn neon" onclick="changeTheme('neon')" title="Neon Cyber"></button>
+                    <button class="theme-btn royal" onclick="changeTheme('royal')" title="Royal Gold"></button>
+                    <button class="theme-btn forest" onclick="changeTheme('forest')" title="Forest Green"></button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>🔊 Audio</h3>
+                <div class="sound-controls">
+                    <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊 ON</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>⚡ Game Mode</h3>
+                <div class="difficulty-selector">
+                    <select id="gameMode" onchange="changeGameMode()">
+                        <option value="classic">Classic</option>
+                        <option value="blitz">Blitz (5 min)</option>
+                        <option value="rapid">Rapid (10 min)</option>
+                        <option value="bullet">Bullet (3 min)</option>
+                        <option value="correspondence">Correspondence (1 day)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>🤖 Play Mode</h3>
+                <div class="difficulty-selector">
+                    <select id="playMode" onchange="changePlayMode()">
+                        <option value="human">Human vs Human</option>
+                        <option value="bot-easy">vs Bot (Easy)</option>
+                        <option value="bot-medium">vs Bot (Medium)</option>
+                        <option value="bot-hard">vs Bot (Hard)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="player-info">
+                <div class="player-avatar">♔</div>
+                <div>
+                    <div>White Player</div>
+                    <div class="timer" id="whiteTimer">∞</div>
+                </div>
+            </div>
+            
+            <div class="player-info" style="text-align: center;">
+                <div class="player-avatar" id="currentPlayerAvatar">♔</div>
+                <div>
+                    <div id="currentPlayer">White's Turn</div>
+                </div>
+            </div>
+            
+            <div class="player-info">
+                <div class="player-avatar">♚</div>
+                <div>
+                    <div>Black Player</div>
+                    <div class="timer" id="blackTimer">∞</div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn" onclick="resetGame()">🔄 New Game</button>
+                <button class="btn" onclick="undoMove()">↶ Undo</button>
+                <button class="btn" onclick="showHint()">💡 Hint</button>
+                <button class="btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+            </div>
+        </div>
+
+        <div class="chess-board" id="chessBoard"></div>
+
+        <div class="game-status" id="gameStatus">
+            🎯 Make your move! Click a piece to select it, then click where you want to move.
+        </div>
+
+        <div class="move-history">
+            <h3>📜 Move History</h3>
+            <div id="moveList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96121072f2c87b2f',t:'MTc1Mjg0MjYwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html> 
